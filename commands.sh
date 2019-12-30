@@ -122,7 +122,7 @@ ssh-add -l
 ssh-add -D                # removes all ssh entries from the ssh-agent
 ssh-add ~/.ssh/id_rsa     # Adds the relevant ssh key
 
-
+    # don't forget to change your local configs like name and email
 
 # We need to copy the public key across to the user that we want to connect to
 ssh-copy-id -i ssh-test.pub user-name@ip-192-168-3-3
