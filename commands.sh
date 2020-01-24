@@ -94,11 +94,22 @@ grep StricHostKeyChecking /ect/ssh/ssh_config
 # -------------------------
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
+
+# SSH private key file format must be PEM (for example, use ssh-keygen -m PEM to convert the OpenSSH key into the PEM format)
+ssh-keygen -p -m PEM -f ~/.ssh/id_rsa
+openssl rsa -in ~/.ssh/id_rsa -outform pem > id_rsa.pem
+
+
+# How can I change the comment field of an RSA key (SSH)?
+ssh-keygen -c -C "my new comment" -f ~/.ssh/my_ssh_key
+
+
+
 # Adding your SSH key to the ssh-agent
 #   Start the ssh-agent in the background.
 eval "$(ssh-agent -s)"  # --> Agent pid 59566
 
-# Add your SSH private key to the ssh-agent and store your passphrase in the keychain.
+# to the ssh-agent and store your passphrase in the keychain.
 ssh-add -K ~/.ssh/id_rsa
 
 
