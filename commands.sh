@@ -104,6 +104,8 @@ openssl rsa -in ~/.ssh/id_rsa -outform pem > id_rsa.pem
 ssh-keygen -c -C "my new comment" -f ~/.ssh/my_ssh_key
 
 
+# How do I change my private key passphrase?
+ssh-keygen -p -f ~/.ssh/id_dsa
 
 # Adding your SSH key to the ssh-agent
 #   Start the ssh-agent in the background.
